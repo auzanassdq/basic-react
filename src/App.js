@@ -39,9 +39,11 @@ function App() {
           <Users />
         </Route>
         <Route path="/login">
+          {/* component class*/}
           <Login />
         </Route>
         <Route path="/register">
+          {/* component function*/}
           <Register />
         </Route>
       </Switch>
