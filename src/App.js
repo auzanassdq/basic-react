@@ -1,25 +1,51 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import "./App.css";
+
+// Import component
+import Navbar from "./component/Navbar";
+import Login from "./component/Login";
+import Register from "./component/Register";
+
+// Component get props
+function Home(props) {
+  return <h1>Welcome to {props.name} </h1>;
+}
+
+// Component with arrow function
+const About = () => (
+  <h1>About</h1>
+)
+
+function Users() {
+  return <h1>Users</h1>;
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+
+      <Navbar />
+
+      <Switch>
+        <Route exact path="/">
+          {/* Sending props name */}
+          <Home name="Nurul Fikri" />
+        </Route>
+        <Route path="/about">
+          <About />
+        </Route>
+        <Route path="/users">
+          <Users />
+        </Route>
+        <Route path="/login">
+          <Login />
+        </Route>
+        <Route path="/register">
+          <Register />
+        </Route>
+      </Switch>
+    </BrowserRouter>
   );
 }
 
