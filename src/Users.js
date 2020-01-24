@@ -6,6 +6,7 @@ function Users({history, match}) {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
+    // GET data using axios
     axios
       .get("https://reqres.in/api/users")
       .then(result => {
@@ -18,7 +19,7 @@ function Users({history, match}) {
   }, []);
 
   const handleClick = id => {
-    // add id on route /users
+    // add params id on route /users, for DetailUser
     history.push(`${match.url}/${id}`)
   }
 

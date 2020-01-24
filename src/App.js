@@ -30,20 +30,25 @@ function App() {
           {/* Sending props name */}
           <Home name="Nurul Fikri" />
         </Route>
+
         <Route path="/about">
           <About />
         </Route>
+
         <Route exact path="/users">
           <Users />
         </Route>
-        {/* Detail page with params id */}
+
+        {/* Detail page /users with params id */}
         <Route path="/users/:id">
           <DetailUser />
         </Route>
+
         <Route path="/login">
           {/* component class*/}
           <Login />
         </Route>
+
         <Route path="/register">
           {/* component function*/}
           <Register />
