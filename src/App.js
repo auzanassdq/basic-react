@@ -6,19 +6,17 @@ import "./App.css";
 import Navbar from "./component/Navbar";
 import Login from "./component/Login";
 import Register from "./component/Register";
-
-// Component get props
-function Home(props) {
-  return <h1>Welcome to {props.name} </h1>;
-}
+import Users from './Users'
+import DetailUser from "./DetailUser";
 
 // Component with arrow function
 const About = () => (
   <h1>About</h1>
 )
 
-function Users() {
-  return <h1>Users</h1>;
+// Component woth props
+function Home(props) {
+return <h1>Welcome {props.name}</h1>;
 }
 
 function App() {
@@ -35,8 +33,12 @@ function App() {
         <Route path="/about">
           <About />
         </Route>
-        <Route path="/users">
+        <Route exact path="/users">
           <Users />
+        </Route>
+        {/* Detail page with params id */}
+        <Route path="/users/:id">
+          <DetailUser />
         </Route>
         <Route path="/login">
           {/* component class*/}
